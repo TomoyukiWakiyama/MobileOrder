@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Models\Category;
 use App\Models\Heading;
+use App\Models\Prefecture;
 
 class Menu extends Model
 {
@@ -29,5 +30,10 @@ class Menu extends Model
     public function heading()
     {
         return $this->hasMany(Heading::class);
+    }
+
+    public function prefecture()
+    {
+        return $this->belongsToMany(Prefecture::class);
     }
 }

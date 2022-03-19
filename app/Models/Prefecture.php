@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use App\Models\Menu;
+
 class Prefecture extends Model
 {
     use HasFactory;
@@ -12,5 +14,10 @@ class Prefecture extends Model
     protected $fillable = [
         'name',
     ];
+
+    public function menu()
+    {
+        return $this->belongsToMany(Menu::class);
+    }
     
 }
