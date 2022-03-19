@@ -6,7 +6,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 
-class CategorySeeder extends Seeder
+class HeadingSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,21 +16,25 @@ class CategorySeeder extends Seeder
     public function run()
     {
         //
-        DB::table('categories')->insert([
+        DB::table('headings')->insert([
             [
-                'name' => 'お弁当',
+                'name' => 'ピックアップメニュー',
                 'created_at' => Carbon::now(),
             ],
             [
-                'name' => 'おかずのみ',
+                'name' => 'レギュラーメニュー(一皿)',
                 'created_at' => Carbon::now(),
             ],
             [
-                'name' => 'サイドメニュー',
+                'name' => 'レギュラーメニュー(二皿)',
                 'created_at' => Carbon::now(),
             ],
             [
-                'name' => 'イベント用',
+                'name' => 'プラスから揚げ',
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'プラスサラダ',
                 'created_at' => Carbon::now(),
             ],
         ]);
