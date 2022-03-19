@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             AdminSeeder::class,
             CategorySeeder::class,
             HeadingSeeder::class,
+            PrefectureSeeder::class,
         ]);
     }
 }
