@@ -22,11 +22,11 @@ class HeadingSeeder extends Seeder
                 'created_at' => Carbon::now(),
             ],
             [
-                'name' => 'レギュラーメニュー(一皿)',
+                'name' => 'レギュラーメニュー(お弁当、丼もの)',
                 'created_at' => Carbon::now(),
             ],
             [
-                'name' => 'レギュラーメニュー(二皿)',
+                'name' => 'レギュラーメニュー(ご飯別皿)',
                 'created_at' => Carbon::now(),
             ],
             [
