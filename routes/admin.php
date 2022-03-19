@@ -22,10 +22,10 @@ use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 */
 
 Route::get('/', function () {
-    return view('admin.welcome');
-});
+    return view('admin.dashboard');
+})->middleware(['auth:admin'])->name('dashboard');
 
-Route::get('/dashboard', function () {
+Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin'])->name('dashboard');
 
