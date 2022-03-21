@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\User\ItemController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,12 +15,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('user.welcome');
-});
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('user.dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+/*********************************
+	ItemController
+*********************************/
+Route::middleware('auth:users')
+    ->group(function(){
+        Route::get('/', [ItemController::class, 'index'])
+            ->name('items.index');
+    });
+
 
 require __DIR__.'/auth.php';

@@ -112,7 +112,7 @@ class MenuController extends Controller
             'name' => ['required', 'string', 'max:50'],
             'information' => ['required', 'string', 'max:500'],
             'price' => ['required', 'integer', 'max:10000',],
-            // 'frontImage' => ['required', 'image', 'mimes:jpg,jpeg,png', 'max:2048'],
+            // 'frontImage' => ['image', 'mimes:jpg,jpeg,png', 'max:2048'],
             'category' => ['required', 'exists:categories,id'],
             'heading' => ['required', 'exists:headings,id'],
         ]);
@@ -120,17 +120,20 @@ class MenuController extends Controller
         try{
 
             DB::transaction(function () use($request, $id) { 
-                // 画像Storage登録
-                $frontImagePaht = Storage::putFile('public/menus', $request->frontImage);
-
                 // Menuを取得
                 $menu = Menu::findOrFail($id);
 
+                // 画像Storage登録
+                if($request->frontImage){
+                    $frontImagePaht = Storage::putFile('public/menus', $request->frontImage);
+                    $menu->frontImage = basename($frontImagePaht);
+                }
+
+                
                 // Menuを更新
                 $menu->name = $request->name;
                 $menu->information = $request->information;
                 $menu->price = $request->price;
-                $menu->frontImage = basename($frontImagePaht);
                 $menu->category_id = $request->category;
                 $menu->heading_id = $request->heading;
                 $menu->save();

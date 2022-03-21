@@ -31,7 +31,7 @@
 
                             <div> <!-- 一覧画像 -->
                                 <label for="frontImage" class="mr-4">一覧画像</label>
-                                <input type="file" id="frontImage"name="frontImage"  accept="image/png, image/jpeg, image/jpg" required />
+                                <input type="file" id="frontImage"name="frontImage"  accept="image/png, image/jpeg, image/jpg" />
                             </div>
 
                             <div> <!-- カテゴリー -->

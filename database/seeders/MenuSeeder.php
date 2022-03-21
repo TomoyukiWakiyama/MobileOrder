@@ -41,6 +41,47 @@ class MenuSeeder extends Seeder
                 'heading_id' => 3,
                 'created_at' => Carbon::now(),
             ],
+            [
+                'name' => 'メニュー４',
+                'information' => '説明文',
+                'price' => 500,
+                'category_id' => 3,
+                'heading_id' => 3,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'メニュー５',
+                'information' => '説明文',
+                'price' => 500,
+                'category_id' => 3,
+                'heading_id' => 3,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'メニュー６',
+                'information' => '説明文',
+                'price' => 500,
+                'category_id' => 3,
+                'heading_id' => 3,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'メニュー７',
+                'information' => '説明文',
+                'price' => 500,
+                'category_id' => 3,
+                'heading_id' => 3,
+                'created_at' => Carbon::now(),
+            ],
+            [
+                'name' => 'メニュー８',
+                'information' => '説明文',
+                'price' => 500,
+                'category_id' => 3,
+                'heading_id' => 3,
+                'created_at' => Carbon::now(),
+            ],
+
         ]);
     }
 }
