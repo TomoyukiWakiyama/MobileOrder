@@ -18,6 +18,7 @@ class Menu extends Model
         'name',
         'information',
         'price',
+        'frontImage',
         'category_id',
         'heading_id',
     ];
@@ -32,7 +33,7 @@ class Menu extends Model
         return $this->hasMany(Heading::class);
     }
 
-    public function prefecture()
+    public function prefectures()
     {
         return $this->belongsToMany(Prefecture::class);
     }

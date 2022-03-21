@@ -18,6 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('name');
             $table->text('information');
             $table->unsignedInteger('price');
+            $table->string('frontImage')->nullable();
             $table->foreignId('category_id')
                 ->constrained();
             $table->foreignId('heading_id')
