@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
 
+use App\Http\Controllers\Admin\MenuController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,9 +28,16 @@ Route::get('/', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin'])->name('dashboard');
 
-Route::get('/admin/dashboard', function () {
+Route::get('dashboard', function () {
     return view('admin.dashboard');
 })->middleware(['auth:admin'])->name('dashboard');
+
+/*********************************
+	MenuController
+*********************************/
+Route::resource('menus', MenuController::class)
+    ->middleware('auth:admin')
+    ->except(['show']);
 
 /*********************************
 	auth.php
